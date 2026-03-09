@@ -147,14 +147,17 @@ h4 { font-size: 1.1rem; }
   font-size: 1rem;
 }
 
-.btn-nav {
+.nav-links a.btn-nav {
   padding: 10px 24px;
   background: var(--accent);
   color: #fff;
   border-radius: 6px;
+  transition: all 0.3s var(--ease);
 }
-.btn-nav:hover {
+.nav-links a.btn-nav:hover {
   background: var(--accent-hover);
+  color: var(--text);
+  font-weight: 600;
 }
 
 /* --- Navigation --- */
@@ -304,10 +307,12 @@ h4 { font-size: 1.1rem; }
 .hero-scroll {
   position: absolute;
   bottom: 40px;
-  left: clamp(20px, 4vw, 48px);
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   font-size: 0.75rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -315,8 +320,8 @@ h4 { font-size: 1.1rem; }
 }
 
 .scroll-line {
-  width: 48px;
-  height: 1px;
+  width: 1px;
+  height: 48px;
   background: var(--border);
   position: relative;
   overflow: hidden;
@@ -324,8 +329,8 @@ h4 { font-size: 1.1rem; }
 .scroll-line::after {
   content: '';
   position: absolute;
-  left: -100%;
-  top: 0;
+  top: -100%;
+  left: 0;
   width: 100%;
   height: 100%;
   background: var(--accent);
@@ -333,9 +338,9 @@ h4 { font-size: 1.1rem; }
 }
 
 @keyframes scrollLine {
-  0%   { left: -100%; }
-  50%  { left: 0; }
-  100% { left: 100%; }
+  0%   { top: -100%; }
+  50%  { top: 0; }
+  100% { top: 100%; }
 }
 
 /* --- Stats Bar --- */
